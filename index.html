@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Jquery cdn  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <style type="text/css" media="screen">
+        #editor {
+            position: relative;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-top-right-radius: 0.5rem;
+        }
+    </style>
+    <title>Code Editor</title>
+</head>
+
+<body>
+    <div id="app-container">
+        <div id="sidebar">
+            <div id="branding">
+                <img src="./images/logo.png" alt="logo">
+                <div>Code.io</div>
+            </div>
+            <div class="sidebar-btn-group">
+                <div class="btn-group dropend sidebar-btn">
+                    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" style="min-width: 133px;"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Language
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark" style="text-align: center;">
+                        <li class="dropdown-item">JavaScript</li>
+                        <!-- <li>
+                            <hr class="dropdown-divider">
+                        </li> -->
+                        <li class="dropdown-item">C/C++</li>
+                        <!-- <li>
+                            <hr class="dropdown-divider">
+                        </li> -->
+                        <li class="dropdown-item">Python</li>
+                        <!-- <li>
+                            <hr class="dropdown-divider">
+                        </li> -->
+                        <li class="dropdown-item">Java</li>
+                    </ul>
+                </div>
+                <div class="btn-group dropend sidebar-btn">
+                    <button type="button" class="btn btn-danger btn-sm dropdown-toggle" style="min-width: 133px;"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Theme
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark" style="text-align: center;">
+                        <li class="dropdown-item">Monokai</li>
+                        <!-- <li>
+                            <hr class="dropdown-divider">
+                        </li> -->
+                        <li class="dropdown-item">Twilight</li>
+                        <!-- <li>
+                            <hr class="dropdown-divider">
+                        </li> -->
+                        <li class="dropdown-item">Textmate</li>
+                        <!-- <li>
+                            <hr class="dropdown-divider">
+                        </li> -->
+                        <li class="dropdown-item">Dreamweaver</li>
+                    </ul>
+                </div>
+                <div class="sidebar-btn">
+                    <span class="txt-sm">A</span><input type="range" id="range" min="1.0" max="3.0" step="0.1"
+                        value="2.0" />
+                    <span class="txt-lg">A</span>
+                </div>
+                <button type="button" class="btn btn-success btn-sm sidebar-btn" style="min-width: 133px;">Run</button>
+                <button type="button" class="btn btn-dark btn-sm sidebar-btn" style="min-width: 133px;">Reset</button>
+            </div>
+        </div>
+        <div id="editor-window">
+            <div id="code-editor">
+                <div id="editor">function foo(items) {
+                    var x = "All this is syntax highlighted";
+                    return x;
+                    }</div>
+            </div>
+            <div id="console"></div>
+        </div>
+    </div>
+
+    <!-- Ace editor script -->
+    <script src="./lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+    <!-- js -->
+    <script src="./app.js"></script>
+    <!-- Bootstrap scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
