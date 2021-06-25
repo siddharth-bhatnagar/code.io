@@ -104,18 +104,45 @@ body {
     margin: 30px;
 }
 
-.txt-sm {
-    font-size: small;
-    color: #464343;
-    font-weight: 900;
-    margin-right: 12px;
-    font-family: 'Raleway', sans-serif;
+.modal-background {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    background-color: rgba(68, 68, 68, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.txt-lg {
-    font-size: larger;
-    color: #464343;
-    font-weight: 900;
-    margin-left: 10px;
-    font-family: 'Raleway', sans-serif;
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    height: 45%;
+    width: 30%;
+    font-family: "Raleway";
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.content {
+    padding: 20px;
+    padding-top: 0;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }

@@ -26,78 +26,79 @@
 
 <body>
     <div id="app-container">
+        <!-- Sidebar -->
         <div id="sidebar">
+
             <div id="branding">
                 <img src="./images/logo.png" alt="logo">
                 <div>Code.io</div>
             </div>
+
             <div class="sidebar-btn-group">
+
                 <div class="btn-group dropend sidebar-btn">
                     <button type="button" class="btn btn-primary btn-sm dropdown-toggle" style="min-width: 133px;"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Language
+                        data-bs-toggle="dropdown" aria-expanded="false" id="lang-btn">
+                        JavaScript
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark" style="text-align: center;">
-                        <li class="dropdown-item">JavaScript</li>
-                        <!-- <li>
-                            <hr class="dropdown-divider">
-                        </li> -->
-                        <li class="dropdown-item">C/C++</li>
-                        <!-- <li>
-                            <hr class="dropdown-divider">
-                        </li> -->
-                        <li class="dropdown-item">Python</li>
-                        <!-- <li>
-                            <hr class="dropdown-divider">
-                        </li> -->
-                        <li class="dropdown-item">Java</li>
+                        <li class="dropdown-item lang" id="javascript">JavaScript</li>
+                        <li class="dropdown-item lang" id="c_cpp">C/C++</li>
+                        <li class="dropdown-item lang" id="python">Python</li>
+                        <li class="dropdown-item lang" id="java">Java</li>
                     </ul>
                 </div>
+
                 <div class="btn-group dropend sidebar-btn">
-                    <button type="button" class="btn btn-danger btn-sm dropdown-toggle" style="min-width: 133px;"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Theme
+                    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" style="min-width: 133px;"
+                        data-bs-toggle="dropdown" aria-expanded="false" id="theme-btn">
+                        Textmate
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark" style="text-align: center;">
-                        <li class="dropdown-item">Monokai</li>
-                        <!-- <li>
-                            <hr class="dropdown-divider">
-                        </li> -->
-                        <li class="dropdown-item">Twilight</li>
-                        <!-- <li>
-                            <hr class="dropdown-divider">
-                        </li> -->
-                        <li class="dropdown-item">Textmate</li>
-                        <!-- <li>
-                            <hr class="dropdown-divider">
-                        </li> -->
-                        <li class="dropdown-item">Dreamweaver</li>
+                        <li class="dropdown-item theme" id="monokai">Monokai</li>
+                        <li class="dropdown-item theme" id="twilight">Twilight</li>
+                        <li class="dropdown-item theme" id="textmate">Textmate</li>
+                        <li class="dropdown-item theme" id="dracula">Dracula</li>
+                        <li class="dropdown-item theme" id="github">Github</li>
+                        <li class="dropdown-item theme" id="tomorrow_night_blue">Night Blue</li>
+                        <li class="dropdown-item theme" id="terminal">Terminal</li>
                     </ul>
                 </div>
-                <div class="sidebar-btn">
-                    <span class="txt-sm">A</span><input type="range" id="range" min="1.0" max="3.0" step="0.1"
-                        value="2.0" />
-                    <span class="txt-lg">A</span>
-                </div>
-                <button type="button" class="btn btn-success btn-sm sidebar-btn" style="min-width: 133px;">Run</button>
-                <button type="button" class="btn btn-dark btn-sm sidebar-btn" style="min-width: 133px;">Reset</button>
+
+                <button type="button" class="btn btn-primary btn-sm sidebar-btn" style="min-width: 133px;"
+                    id="run">Run</button>
+                <button type="button" class="btn btn-primary btn-sm sidebar-btn" style="min-width: 133px;"
+                    id="reset">Reset</button>
             </div>
+
+
         </div>
+
+        <!-- Editor -->
         <div id="editor-window">
+
             <div id="code-editor">
-                <div id="editor">function foo(items) {
-                    var x = "All this is syntax highlighted";
-                    return x;
-                    }</div>
+                <div id="editor"></div>
             </div>
+
             <div id="console"></div>
         </div>
+
     </div>
+
+
 
     <!-- Ace editor script -->
     <script src="./lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./lib/ace/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./lib/ace/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
+
+
     <!-- js -->
     <script src="./app.js"></script>
+    <!-- <script src="./lib/console.js"></script> -->
+
+
     <!-- Bootstrap scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
