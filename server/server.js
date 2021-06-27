@@ -10,7 +10,7 @@ app.use(router);
 const port = process.env.PORT || 3000;
 app.post("/", (req, res) => {
     res.set({
-        "Access-Control-Allow-Origin": "http://127.0.0.1:5500",
+        "Access-Control-Allow-Origin": "https://codeio-editor.netlify.app",
         "Access-Control-Allow-Header": "*",
         "Content-Type": "application/json",
         "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
