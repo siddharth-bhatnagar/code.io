@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+body {
+    margin: 0;
+    font-family: "Roboto", Avenir, Helvetica, Arial, sans-serif;
+    color: #000000;
+    height: 100vh;
+    width: 100vw;
+}
+
+*, *:before, *:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+.prevent-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.app-container {
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 12vw;
+    border-right: 1px solid #e5e5e5;
+}
+
+#branding {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    color: cadetblue;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+#branding img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+}
+
+.editor-window {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: calc(100% - 12vw);
+}
+
+.code-editor {
+    height: 70vh;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.user-input-container {
+    height: 5vh;
+    width: 99.5%;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+}
+
+#stdin {
+    border-left: 5px solid rgb(93, 93, 255);
+    height: 100%;
+    width: 100%;
+    background-color: #f1f1f1;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.console {
+    width: 99.5%;
+    height: calc(100% - 75vh);
+    margin: 5px;
+    background-color: #2e1515;
+    border-left: 5px solid rgb(93, 93, 255);
+    color: green;
+    font-weight: 900;
+    font-size: 18px;
+    overflow: scroll;
+    padding-top: 5px;
+    padding-left: 20px;
+}
+
+.console::-webkit-scrollbar {
+    display: none;
+}
+
+.console {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.code-editor {
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+.button-group {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    margin: 30px;
+    width: 125px;
+    min-width: 125px;
+    max-width: 125px;
+}
+
