@@ -9,7 +9,7 @@ const resetBtn = $("#reset");
 let editor = ace.edit("editor");
 
 // Default params
-let defaultTheme = 'textmate';
+let defaultTheme = 'terminal';
 let defaultLang = 'javascript';
 let defaultFontSize = '18px';
 let defaultCode = 'console.log("Hello, World");';
@@ -71,13 +71,8 @@ function handleLangChange(language) {
             snippet = `import java.io.*;\nimport java.util.*;\n\npublic class Main {\n\tpublic static void main(String[] args) {\n\t\tSystem.out.println("Hello, World!");\n\t}\n}`;
             break;
 
-        // case 'golang':
-        //     snippet = `package main\n\nimport "fmt"\n\nfunc main() {\n\tfmt.Println("!... Hello World ...!")\n}`;
-        //     break;
-
-        // case 'typescript':
-        //     snippet = `var greet: string = "Greetings";\nvar user: string = "Programmer!";\nconsole.log(greet + " " + user);`
-        //     break;
+        default:
+            break;
     }
 
     editor.setValue(snippet);
@@ -110,7 +105,7 @@ async function compileIt(code, lang) {
 }
 
 runBtn.click(function (e) {
-    let language = parseLang();
+    let language = aceToJDoodle();
     let code = editor.getSession().getValue();
     compileIt(code, language);
 });
@@ -119,26 +114,21 @@ resetBtn.click(function (e) {
     editor.session.setValue('');
 });
 
-function parseLang() {
-    let langName = $("#language").text();
-    console.log(langName)
-    let language;
-    if (langName == 'Node JS') {
-        language = 'nodejs';
+function aceToJDoodle() {
+    let language = $("#language").text();
+    let langs = {
+        'Node JS': 'nodejs',
+        'C++': 'cpp',
+        'Python': 'python3',
+        'Java': 'java'
     }
-    if (langName == 'C++') {
-        language = 'cpp';
-    }
-    if (langName == 'Python') {
-        language = 'python3';
-    }
-
-    if (langName == 'Java') {
-        language = 'java';
-    }
-    console.log(language);
-    return language;
-
+    
+    let keys = Object.keys(langs);
+    for(let key of keys) {
+        if(language === key) {
+            return langs[key];
+        }
+    }   
 }
 
 function handleOutput(data) {
@@ -156,3 +146,15 @@ function display(output) {
     $(".console").append(output);
 }
 
+$(".dropdown-item.fs").click(function (e) {
+    let fs = $(this).text();
+    editor.setOptions({
+        autoScrollEditorIntoView: true,
+        copyWithEmptySelection: true,
+        enableBasicAutocompletion: true,
+        enableLiveAutocompletion: true,
+        enableSnippets: true,
+        fontSize: fs + "px"
+    });
+    $("#font-size").text(`${fs}`);
+});

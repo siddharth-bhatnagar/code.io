@@ -1,5 +1,6 @@
 const express = require("express");
 const request = require("request");
+require('dotenv').config()
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -27,9 +28,8 @@ app.post("/", (req, res) => {
                 language: language,
                 stdin: inputs,
                 versionIndex: "0",
-                clientId: "979be7534a00ee57d67e092d98cc3ed4",
-                clientSecret:
-                    "62781cda2e6eec279f40a17819554e3a664eee21eda5f8884a9d4eb19c4ac76c"
+                clientId: process.env.CLIENT_ID,
+                clientSecret: process.env.CLIENT_SECRET
             };
             request(
                 {
