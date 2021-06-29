@@ -159,6 +159,7 @@ runBtn.click(function (e) {
                             <span class="visually-hidden">Loading...</span>
                         </div>
                     </div>`);
+    $(".console p").remove();                
     $(".console").append(loader);
     compileIt(code, language);
 });
@@ -179,7 +180,6 @@ function aceToJDoodle() {
 }
 
 function handleOutput(data) {
-    $(".console p").remove();
     let output = ``;
     let arr = data.output.split("\n");
     arr.forEach((val) => {
