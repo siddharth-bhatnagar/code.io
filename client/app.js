@@ -129,7 +129,7 @@ function handleLangChange(language) {
 
 async function compileIt(code, lang) {
 
-    let response = await fetch("https://code-editor-io.herokuapp.com/", {
+    let response = await fetch("", {
         method: "POST",
         headers: {
             "Content-Type": "text/plain"
