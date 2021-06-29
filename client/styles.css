@@ -140,3 +140,11 @@ button {
     min-width: 125px;
     max-width: 125px;
 }
+
+.loader {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

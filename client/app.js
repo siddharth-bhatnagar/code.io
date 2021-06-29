@@ -154,6 +154,12 @@ async function compileIt(code, lang) {
 runBtn.click(function (e) {
     let language = aceToJDoodle();
     let code = editor.getSession().getValue();
+    let loader = $(`<div class="loader">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>`);
+    $(".console").append(loader);
     compileIt(code, language);
 });
 
@@ -184,6 +190,7 @@ function handleOutput(data) {
 }
 
 function display(output) {
+    $(".loader").remove();
     $(".console").append(output);
 }
 
