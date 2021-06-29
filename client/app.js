@@ -129,7 +129,7 @@ function handleLangChange(language) {
 
 async function compileIt(code, lang) {
 
-    let response = await fetch("", {
+    let response = await fetch("http://127.0.0.1:3000", {
         method: "POST",
         headers: {
             "Content-Type": "text/plain"
